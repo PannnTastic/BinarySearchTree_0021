@@ -36,8 +36,12 @@ class binarytree{
 
             search(element, parent, current); //locatr the node which the parent of the node to be inserted
 
-            if ( parent == nullptr){// mark the new node as root
+            if ( parent == nullptr){// mark the new node as root if the parent is null ( tree is empty)
+                root = newnode;
+            }
 
+            if (element < parent->info){ //if the value in the data field of the new node is less than parent
+                parent->leftchild = newnode; // make the left child of the parent to the new node
             }
         }
 };
