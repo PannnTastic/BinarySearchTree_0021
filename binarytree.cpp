@@ -94,3 +94,45 @@ class binarytree{
             }
         }
 };
+
+int main (){
+    binarytree a;
+    int pil;
+    while (true){
+        try{
+            cout << "\n Menu \n";
+            cout << "1. Insert Operation \n";
+            cout << "2. Inorder Traversal\n";
+            cout << "3. Preorder Traversal\n";
+            cout << "4. Postorder Traversal\n";
+            cout << "5. Exit\n";
+            cout << "\n Masukkan Pilihan : ";
+            cin >> pil;
+
+            switch(pil){
+                case 1 : {
+                    string word;
+                    cout << "Enter Element : ";
+                    cin >> word;
+                    a.insert(word);
+                    break;
+                }                  
+                case 2 :
+                    a.inorder(a.root);
+                    break;
+                case 3 : 
+                    a.preorder(a.root);
+                    break;
+                case 4 : 
+                    a.postorder(a.root);
+                    break;
+                default : 
+                    cout << "Pilihan Tidak Tersedia! \n";
+                    break;
+            }
+        }
+        catch (exception& e){
+            cout << " Cek Kembali nilai Yang d Masukkan\n";
+        }
+    }
+}
