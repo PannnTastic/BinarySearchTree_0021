@@ -28,5 +28,6 @@ class binarytree{
         {
             node* newnode = new node(element, nullptr, nullptr);//alokasi memori untuk node baru
             newnode->info = element; //assign value to the data field of the new data
+            newnode->leftchild = nullptr; // make the left child of the new node point to null
         }
 };
