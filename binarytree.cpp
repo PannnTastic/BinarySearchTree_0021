@@ -8,6 +8,10 @@ class node{
     node* leftchild;
     node* rightchild;
 
-    //constructor
-    
+    //constructor node
+    node(string i, node* l, node* r){
+        info = i;
+        leftchild = l;
+        rightchild = r;
+    }
 };
