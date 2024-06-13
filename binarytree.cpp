@@ -52,5 +52,16 @@ class binarytree{
         void search ( string element, node*& parent, node*& current){
             current = root;
             parent = nullptr;
+            while((current != nullptr) && current->info != element){
+                parent = current;
+                if(element < current->info){
+                    current = current->leftchild;
+                }
+                else{
+                    current= current->rightchild;
+                }
+            }
         }
+
+        
 };
