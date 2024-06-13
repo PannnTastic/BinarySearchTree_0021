@@ -43,5 +43,9 @@ class binarytree{
             if (element < parent->info){ //if the value in the data field of the new node is less than parent
                 parent->leftchild = newnode; // make the left child of the parent to the new node
             }
+
+            else if (element > parent->info){// if the value is greater than parent
+                parent->rightchild = newnode
+            }
         }
 };
