@@ -21,22 +21,22 @@ class binarytree{
         node* root;
 
         binarytree(){
-            root = nullptr; // inisialisasi root ke null
+            root = NULL; // inisialisasi root ke null
         }
 
         void insert(string element) // insert node in the binary search tree
         {
-            node* newnode = new node(element, nullptr, nullptr);//alokasi memori untuk node baru
+            node* newnode = new node(element, NULL, NULL);//alokasi memori untuk node baru
             newnode->info = element; //assign value to the data field of the new data
-            newnode->leftchild = nullptr; // make the left child of the new node point to null
-            newnode->rightchild = nullptr; // make the right child of the new node point to null
+            newnode->leftchild = NULL; // make the left child of the new node point to null
+            newnode->rightchild = NULL; // make the right child of the new node point to null
 
-            node* parent = nullptr;
-            node* current = nullptr;
+            node* parent = NULL;
+            node* current = NULL;
 
             search(element, parent, current); //locatr the node which the parent of the node to be inserted
 
-            if ( parent == nullptr){// mark the new node as root if the parent is null ( tree is empty)
+            if ( parent == NULL){// mark the new node as root if the parent is null ( tree is empty)
                 root = newnode;
             }
 
@@ -51,8 +51,8 @@ class binarytree{
 
         void search ( string element, node*& parent, node*& current){
             current = root;
-            parent = nullptr;
-            while((current != nullptr) && current->info != element){
+            parent = NULL;
+            while((current != NULL) && current->info != element){
                 parent = current;
                 if(element < current->info){
                     current = current->leftchild;
@@ -64,23 +64,33 @@ class binarytree{
         }
 
         void inorder ( node* ptr){
-            if (root == nullptr){
+            if (root == NULL){
                 cout << "Tree Is Empty" << endl;
             }
-            if (ptr != nullptr){
+            if (ptr != NULL){
                 inorder(ptr->leftchild);
                 cout << ptr->info << " ";
                 inorder(ptr->rightchild);
             }
         }
         void preorder (node* ptr){
-            if (root == nullptr){
+            if (root == NULL){
                 cout << "Tree Is Empty" << endl;
             }
-            if (ptr != nullptr){
+            if (ptr != NULL){
                 cout << ptr->info << " ";
                 preorder(ptr->leftchild);
                 preorder(ptr->rightchild);
+            }
+        }
+        void postorder (node* ptr){
+            if (root == NULL){
+                cout << "Tree Is Empty" << endl;
+            }
+            if (ptr != NULL){
+                postorder(ptr->leftchild);
+                postorder(ptr->rightchild);
+                cout << ptr->info << " ";
             }
         }
 };
