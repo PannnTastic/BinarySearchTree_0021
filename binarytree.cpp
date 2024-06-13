@@ -45,7 +45,12 @@ class binarytree{
             }
 
             else if (element > parent->info){// if the value is greater than parent
-                parent->rightchild = newnode
+                parent->rightchild = newnode;
             }
+        }
+
+        void search ( string element, node*& parent, node*& current){
+            current = root;
+            parent = nullptr;
         }
 };
