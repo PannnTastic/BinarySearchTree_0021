@@ -21,6 +21,11 @@ class binarytree{
         node* root;
 
         binarytree(){
-            root = nullptr;
+            root = nullptr; // inisialisasi root ke null
+        }
+
+        void insert(string element) // insert node in the binary search tree
+        {
+            node* newnode = new node(element, nullptr, nullptr);//alokasi memori untuk node baru
         }
 };
